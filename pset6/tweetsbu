@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+
+# TODO
+import os
+import sys
+
+from analyzer import Analyzer
+from termcolor import colored
+from helpers import get_user_timeline
+
+def main():
+
+    # ensure proper usage
+    if len(sys.argv) != 2:
+        sys.exit("Usage: ./tweets @name")
+
+    # absolute paths to lists
+    positives = os.path.join(sys.path[0], "positive-words.txt")
+    negatives = os.path.join(sys.path[0], "negative-words.txt")
+
+    # instantiate analyzer
+    analyzer = Analyzer(positives, negatives)
+
+    # analyze word
+    score = analyzer.analyze(sys.argv[1])
+    if score > 0.0:
+        print(colored(":)", "green"))
+    elif score < 0.0:
+        print(colored(":(", "red"))
+    else:
+        print(colored(":|", "yellow"))
+
+if __name__ == "__main__":
+    main()
+    
+# need pos neg neutral variables to pass to chart for accurate breakdown
+# argv pass to getusername function returns list of tweets
+# pass tweets to analyze not argv
+# use for loop to analyze each tweet from list
