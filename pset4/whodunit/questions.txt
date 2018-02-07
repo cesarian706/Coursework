@@ -1,0 +1,24 @@
+1. stdint.h is a list of standard definitions limiting data types by their definitions. int(n)_t or uint(n)_t where (n) is the appropriate number of bits stored in the data type.
+
+2.  using data types limits the accepted input to only that predetermined size(in bits). when implemented, it guarantees that the correct data type is passed as they pertain to their respective values as per stdint.h
+
+3.  Byte is one byte as it is assigned uint8_t denoting 8 bits, DWORD is 4 bytes as it is assigned uint32_t denoting 32 bits ("u" prefacing these values indicates unsigned)
+
+4.  the first two bytes of any bitmap file are "BM" in ASCII, similarly to indicating that hexidecimal will be following with 0x, bitmaps use BM as a lead-in so that any format device can read them properly from the header??
+
+5.  bfsize is the size of the entire file, bisize is the size of the image contained therin, minus the headers and padding.
+
+6.  biheight is the pixel count of the vertical axis. negative biheight indicates the file will be displayed from top left down 
+
+7.  bibitcount field indicates color depth by setting the value for bit count per pixel
+
+8.  fopen might return NULL if not enough memory is available or pointer points to nothing or points to memory not allowed to be accessed
+
+9.  the third argument is the block value, it determines how many "chunks" of bytes are to be read at one time. the number of bytes in the chunk is determined by the previous argument. in this case, the third 
+argument is always 1 because we want to look at each byte without skipping any.
+
+10. the value assigned is 3. at the end of all the math we are left with 4 % 3, which translates to 0 with a remainder of 3
+
+11. fseek allows the program to move the pointer though memory based on the parameters given to it
+
+12. SEEK_CUR allows the prograrm to move the pointer from its current position forward or back however many bytes are indicated by the second argument

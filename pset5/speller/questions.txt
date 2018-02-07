@@ -1,0 +1,24 @@
+0.  Pneumonoultramicroscopicsilicovolcanoconiosis is a lung disease caused by the inhalation of very fine silicate or quarts dust.
+
+1.  getrusage returns resource usage measures, meaning it adds up time used by resources based on "who" is evaluated (RUSAGE_SELF in this case).
+
+2.  There are 16 members in variable type struct rusage. Not all fields are completed, incomplete fields are set to 0.
+
+3.  Passing by reference doesn't require a temporary copy of the members of the struct to be made, the function can look directly at the data.
+    Passing a copy of a large struct would add to runtime, in this case the data is safe because the struct was defined as a const.
+    
+4.  The for loop first gets a character from the text file, checks that it is not the end of file, when it returns it gets a new
+    character. The first loop inside checks if the character is alphabetic or an apostrophe (as long as the apostrophe is not at the
+    begining of the word). If the check is passed, the charater is apended to the array "word". Index is incremented so the next
+    character is placed in the next element of the array. Before returning to the for loop the array "word" is compared to the constant
+    "LENGTH", if "word" is longer than LENGTH a while loop is initiated until the "\0" is found in the text file. Index is reset for "word"
+    to be overwritten. If a number is in the string the next loop will iterate through the string until the "\0" is found and reset
+    index. If the "\0" is found the two loops are skipped (because "\0" is neither alphanumeric nor apostrophe). If index is greater than
+    0, a "\0" is added to the end of "word". The word counter is incremented and "word" is passed to the check function. If "word" fails
+    check function, it is printed and misspellings is incremented. index is reset to 0.
+    
+5.  fscanf would be redundant and presumably slower at runtime. The string has to be evaluated character by character anyway
+    to ensure it contains only letters and apostrophes before it is passed to the check function. fscanf creates an copy of a string. 
+    fgetc cuts out the middle man by evaluating each charater directly.
+    
+6.  The parameters for check and load are declared as const so that their values cannot be changed.
