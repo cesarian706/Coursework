@@ -1,0 +1,68 @@
+.container
+{
+    /* center contents */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+.navbar
+{
+    background-color: yellow;
+    overflow: hidden;
+    border-style: solid;
+    border-width: 5px;
+    border-color: red;
+}
+
+/* Style the links inside the navigation bar */
+.navbar a
+{
+    float: left;
+    display: block;
+    color: blue;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+
+}
+
+.navbar a:hover
+{
+    background-color: #ddd;
+    color: black;
+}
+
+.logo
+{
+
+	font-family: Luckiest Guy;
+	font-size: 40px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+	color: blue;
+
+
+}
+
+.message_in
+{
+    background-color: darkgrey;
+    text-align: left;
+}
+
+.message_out
+{
+    text-align: right;
+}

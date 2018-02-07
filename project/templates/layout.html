@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Luckiest+Guy"/>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <title>Family Guide: {% block title %}{% endblock %}</title>
+
+  </head>
+
+  <body style="background-color:powderblue;">
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar" data-toggle="collapse" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><span class="logo">Family Guide</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          {% if session.user_id %}
+            <ul class="nav navbar-nav">
+              <li><a href="{{ url_for('index') }}">Home</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="{{ url_for('add_user') }}">Add User</a></li>
+              <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            </ul>
+          {% else %}
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="{{ url_for('login') }}">Log In</a></li>
+              <li><a href="{{ url_for('register') }}">Register</a></li>
+            </ul>
+          {% endif %}
+        </div>
+      </div>
+    </nav>
+    </nav>
+
+    <main>
+      {% block main %}{% endblock %}
+    </main>
+
+  </body>
+</html>
