@@ -1,0 +1,115 @@
+value = needle
+values[] = haystack
+n = array "haystack" size
+
+SEARCH MUST BE IN O(log n)!!!!
+binary search
+
+if(n < 0)
+return false
+
+if int needle in values[] //scanf?
+return true
+
+if int needle not in values
+return false
+
+
+binary search algorithm
+
+if(n<0)
+{
+return false;
+}
+int start = 0
+int end = n-1
+do
+{
+    int x = values[(start + end)/2]
+    if( values[(start + end)/2] == value
+    {
+        return true;
+    }
+    if(values[(start + end)/2 > value)
+    {
+        end = values[(start + end)/2) - 1]
+    }
+    if (values[(start + end)/2) < value)
+    start = values[(start + end)/2) +1]
+}while(x >= 0)
+
+int left (int p)
+int end;
+
+end = p - 1
+return end;
+
+
+
+
+
+
+
+bubble sort
+for (i=0; i < n; i++)
+if values[i] > values[i+1]
+swap //memmove?
+if no sort
+end
+else
+i=0
+
+void sort(int values[], int n)
+{
+    for(int i = 0; i < n; i++)
+    {
+        int a;
+        int b;
+        if(values[i] > values[i+1])
+        {
+            int a= values[i];
+            int b= values[i+1];
+            values[i]= b;
+            values[i+1]= a;
+        }
+    }
+    return;
+}
+
+
+selection sort
+void sort(int values[], int n)
+for(i=0; i< (n-2); i++)
+{
+int hold= haystack[i];
+for(int i = 0; i < n-1; i++)
+{
+if(haystack[i] > hold)
+int min= haystack[i];
+
+
+
+
+
+scanf("%d", values)
+if(("%d", values) > i)
+min= "%d"
+if min != i
+memmove
+
+bubble sort
+
+int count = -1
+if(count != 0)
+{
+count = 0;
+for(int i =0; i <n-2, i++)
+{
+    if(values[i] > values[i+1])
+    {
+        int a= values [i];
+        int b= values[i+1];
+        values[i]= b;
+        values[i+1]= a;
+        count++;
+    }

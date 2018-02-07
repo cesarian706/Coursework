@@ -1,0 +1,74 @@
+0. TODO
+void init
+int board (d x d)
+if % = 0, swap 2/1
+implement _ function
+
+int tiles = (d x d)
+for( i = 0; i < tiles; i++)
+//make array ("board") for (tiles - 1), implement from highest to lowest, invert 2/1 for even board, create int value for space and change its output to "_"
+
+
+
+1. TODO
+void draw
+display game board, refresh after move
+
+for(int i = 0; i < d; i++)
+    for(int j = 0; j < d; j++)
+    printf("%i", board[i][j]);
+
+
+2. TODO
+bool move (int tile)
+check valid move (up down left right) using [][] locations for a guide
+return false if not valid
+exchange values for move
+call draw for new layout if move valid
+
+
+
+3. TODO
+bool won(void)
+game won
+if numbers in order- smallest to largest, left to right, top to bottom
+
+storage
+bool move(int tile);
+bool won(void);
+
+/**
+ * If tile borders empty space, moves tile and returns true, else
+ * returns false. 
+ */
+bool move(int tile)
+{
+    // TODO
+    return false;
+}
+
+/**
+ * Returns true if game is won (i.e., board is in winning configuration), 
+ * else false.
+ */
+bool won(void)
+{
+    // TODO
+    return false;
+}
+
+
+
+if (won())
+        {
+            printf("ftw!\n");
+            break;
+        }
+        
+        
+if (!move(tile))
+        {
+            printf("\nIllegal move.\n");
+            usleep(500000);
+        }        
+        
