@@ -1,0 +1,89 @@
+var lat = place.latitude
+var lng = place.longitude
+        //maybe try '{{ latitude }}' , '{{ longitude }}'//
+
+var marker = new google.maps.Marker({
+          position: {lat: lat, lng: lng},
+          map: map,
+          title: '{{ place_name }}' //?? syntax
+        });
+
+
+
+
+for (var key in object)
+    {
+    iterate through places data (object[key])
+    }
+
+for (var key of object)
+    {
+    key
+    }
+
+
+    //function applied to every element of "array"
+    array.map()
+
+
+
+update creates json object with all needed info (how to pass it?) update.js gets json from update.py
+use for loop to create marker for each object// update.js iterates over object already
+
+do i make div for each then remove div when change is made?
+add marker to markers[] array for removal later
+add functionality to marker
+
+
+
+
+marker.addListener('click', function() {
+  var geo = place //#q
+  $.getJSON(Flask.url_for("articles", geo))function(data) {
+  var html = "<ul>"
+  for (var key in data){
+    html += "<li><a href=\"" + data[link] + "\">" + data[title] + "</a></li>"
+  }
+  html += "</ul>"
+});
+var content = html
+showInfo(marker, content);
+        //check syntax for json
+markers.push({marker})
+
+
+
+ // Add 5 markers to map at random locations.
+  // For each of these markers, give them a title with their index, and when
+  // they are clicked they should open an infowindow with text from a secret
+  // message.
+  var secretMessages = ['This', 'is', 'the', 'secret', 'message'];
+  var lngSpan = bounds.east - bounds.west;
+  var latSpan = bounds.north - bounds.south;
+  for (var i = 0; i < secretMessages.length; ++i) {
+    var marker = new google.maps.Marker({
+      position: {
+        lat: bounds.south + latSpan * Math.random(),
+        lng: bounds.west + lngSpan * Math.random()
+      },
+      map: map
+    });
+    attachSecretMessage(marker, secretMessages[i]);
+  }
+}
+
+// Attaches an info window to a marker with the provided message. When the
+// marker is clicked, the info window will open with the secret message.
+function attachSecretMessage(marker, secretMessage) {
+  var infowindow = new google.maps.InfoWindow({
+    content: secretMessage
+  });
+
+  marker.addListener('click', function() {
+    infowindow.open(marker.get('map'), marker);
+  });
+}
+
+setMapOnAll (null);
+clearMarkers ();
+markers = [];
